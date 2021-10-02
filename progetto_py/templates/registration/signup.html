@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Registrazione{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/css_signup.css"/>
+{% endblock %}
+{% block content %}
+<div class="container signup-container">
+    <div class="signup-form">
+        <h2>Registrazione</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">{{form.username.label_tag}}</label>
+                <input name="username" type="text" class="form-control" required id="id_username" placeholder="Username">
+                {% if form.username.help_text %}
+                <small class="form-text text-muted">{{form.username.help_text}}</small>
+                {% endif %}
+                {% for error in form.username.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_first_name">{{form.first_name.label_tag}}</label>
+                <input name="first_name" type="text" class="form-control" id="id_first_name" placeholder="Nome">
+                {% for error in form.first_name.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_last_name">{{form.last_name.label_tag}}</label>
+                <input name="last_name" type="text" class="form-control" id="id_last_name" placeholder="Cognome">
+                {% for error in form.last_name.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_email">{{form.email.label_tag}}</label>
+                <input name="email" type="email" class="form-control" id="id_email" placeholder="Email">
+                {% for error in form.email.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_password1">{{form.password1.label_tag}}</label>
+                <input name="password1" type="password" class="form-control" required id="id_password1" placeholder="Password">
+
+                {% if form.password1.help_text %}
+                    <small class="form-text text-muted">{{form.password1.help_text}}</small>
+                {% endif %}
+                {% for error in form.password1.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_password2">{{form.password2.label_tag}}</label>
+                <input name="password2" type="password" class="form-control" required id="id_password2" placeholder="Password">
+
+                {% if form.password2.help_text %}
+                    <small class="form-text text-muted">{{form.password2.help_text}}</small>
+                {% endif %}
+                {% for error in form.password2.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <button id="signupbtn" class="btn btn-primary" type="submit">Registrati</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

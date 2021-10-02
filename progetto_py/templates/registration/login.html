@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/css_login.css"/>
+{% endblock %}
+{% block content %}
+    <div class="text-center mt-5">
+        <div class="card " style="width: 25rem; margin: auto">
+            <h2>Login</h2>
+            <div class="form-group">
+                <form method="post" style="max-width: 300px; margin: auto">
+                    {% csrf_token %}
+                    <label for="id_username">{{form.username.label_tag}}</label>
+                    <input type="text" name="username" class="form-control" required id="id_username" placeholder="Username">
+                    {% for error in form.username.errors %}
+                        <p style="color: red">{{ error | safe}}</p>
+                    {% endfor %}
+                    <label for="id_password">{{form.password.label_tag}}</label>
+                    <input name="password" type="password" class="form-control" required id="id_password" placeholder="Password">
+                    {% for error in form.password.errors %}
+                        <p style="color: red">{{ error | safe }}</p>
+                    {% endfor %}
+                    <!-- AGGIUNGERE FORM PER INDIRIZZARE IL LOGIN ALLA DASHBOARD -->
+                    <button id="loginbtn" class="btn btn-primary" style="margin-left: auto; margin-right: auto; display: block; margin-top: 2em;" type="submit">Login</button>
+                </form>
+            </div>
+            <a id="signupText" type="button" style="margin-left: auto; margin-right: auto; display: block; margin-top: 2em;" href="/accounts/signup" class="btn btn-signup">Non sei registrato? Registrati!</a>
+        </div>
+    </div>
+{% endblock %}
+
+
+

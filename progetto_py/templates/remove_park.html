@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/static/generic_stylesheet.css">
+    <script type="text/javascript" src="/static/aws-sdk.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script>
+{% endblock %}
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item my-1 col-lg-12">
+                        <form action="/dashboard">
+                            <button type="submit" class="btn btn-primary col-lg-12">Home</button>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item my-1 col-lg-12">
+                        <form action="/add_park">
+                            <button type="submit" class="btn btn-primary col-lg-12">Add Parking</button>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item my-1 col-lg-12">
+                        <form action="/messages">
+                            <button type="submit" class="btn btn-primary col-lg-12">Messages</button>
+                        </form>
+                    </li>
+                </ul>
+
+                <div>
+                    {% if user.is_authenticated %}
+                        <button type="button" class="btn btn-lg" disabled>
+                            Hi, {{ user.username }}</button>
+                    {% endif %}
+                </div>
+                <div>
+                    <form class="form-inline my-1 col-12 float-right" action="{% url 'login' %}">
+                        <button type="submit" class="btn btn-primary col-lg-12">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form_page">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% if user.is_authenticated %}
+                        <div class="row ">
+                        <div class="text-center d-flex justify-content-center col-12 mb-2">
+                            <div class="col-12 col-xl-8">
+                                <div class="card ">
+                                    <h5 class="card-header">Remove Parking</h5>
+                                    <div class="card-body">
+                                        {% for e in error %}
+                                            <div class="alert alert-danger">
+                                                <strong>{{ e.message }}</strong>
+                                            </div>
+                                        {% endfor %}
+                                        <form method="post" enctype="multipart/form-data">
+                                            <fieldset>
+                                                {% csrf_token %}
+                                                {% for park in parks %}
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                   value={{ park.name }}
+                                                                           id={{ park.name }} name="parkings">
+                                                            {{ park.name }}
+                                                        </label>
+                                                    </div>
+                                                {% endfor %}
+                                            </fieldset>
+                                            <div class="mt-3 modal-footer text-center d-flex justify-content-center">
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>You are not logged in</p>
+                        <a href="{% url 'login' %}">Login</a> {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

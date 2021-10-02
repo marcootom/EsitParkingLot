@@ -1,0 +1,187 @@
+form p input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1.1rem;
+    font-size: 1.063rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+form p select {
+    width: 100%;
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1.1rem;
+    font-size: 1.063rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.board {
+    margin: 5em 0em;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+p label,
+p input {
+    display: block;
+    font-family: sans-serif;
+}
+
+.line {
+    margin: 1em 0em;
+}
+
+.user-name {
+    margin: 5em 0em;
+}
+
+.add-card {
+    margin: 1em 0em;
+}
+
+.link {
+    color: #FFFFFF;
+}
+
+.link:hover {
+    color: #cacaca;
+    text-decoration: none;
+}
+
+.tag-card {
+    top: -1em;
+    left: 0.5em;
+}
+
+.form-group {
+    margin: 1.5rem 0rem;
+}
+
+.form-bg {
+    background: #FFFFFF;
+    padding: 3em;
+    margin: 8.5em -3em;
+    width: 100%;
+}
+
+.form-bg-login {
+    background: #FFFFFF;
+    padding: 3em;
+    margin: 8.5em -3em;
+    width: 100%;
+    border-color: #007bff!important;
+    border-radius: 16px;
+    border-style: solid;
+}
+
+.form-bg-signup {
+    background: #FFFFFF;
+    padding: 3em;
+    margin: 1.5em -3em;
+}
+
+.signup {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: -1em;
+}
+
+.checkbox li {
+    list-style-type: none;
+}
+
+.checkbox ul {
+    padding-inline-start: 0px;
+}
+
+.card-body-main {
+    min-height: 17em;
+}
+
+form p textarea {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 1.1rem;
+    font-size: 1.063rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn-xs {
+    padding: 0.2rem .1rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+span[id^="dot-"] {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: -5px;
+    margin-left: 22px;
+}
+
+div.container div.form_page{
+    margin-top: 50px;
+}
+
+div#text-card {
+    padding-left: 10px;
+}
+
+.card-padding {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-padding-single {
+    margin: 12px 18px 12px 12px;
+}
+
+#error-handle{
+    margin-top: 50px;
+}
+
+.table-margin{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.bg-table {
+    background: rgba(54, 54, 54, 0.73);
+    color: #FFFFFF;
+}
