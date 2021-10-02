@@ -5,10 +5,10 @@
 function connectToPark() {
 
     let iotData = new AWS.IotData({
-        endpoint: 'a3cytfxnue36h3-ats.iot.us-west-2.amazonaws.com',
+        endpoint: '',
         region: 'us-west-2',
-        accessKeyId: 'AKIA437IIVU7BJX7RJFX',
-        secretAccessKey: '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'
+        accessKeyId: '',
+        secretAccessKey: ''
     })
 
     // Viene recuperato il nome del parcheggio.

@@ -14,8 +14,8 @@ client = MongoClient('localhost:27017')
 db = client['parkinglots']
 col_park = db['parking']
 
-aws_access_key_id = 'AKIA437IIVU7BJX7RJFX'
-aws_secret_access_key = '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'
+aws_access_key_id = ''
+aws_secret_access_key = ''
 
 
 def signup(request):

@@ -1,10 +1,10 @@
 function connectToPark(){
     //Viene creato un client AWS tramite l'utilizzo dell'endpoint e viene richiesto l'utilizzo del servizio IotData
     let iotData = new AWS.IotData({
-        endpoint: 'a3cytfxnue36h3-ats.iot.us-west-2.amazonaws.com',
+        endpoint: '',
         region: 'us-west-2',
-        accessKeyId: 'AKIA437IIVU7BJX7RJFX',
-        secretAccessKey: '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'
+        accessKeyId: '',
+        secretAccessKey: ''
     })
 
     //Viene recuperata la sezione HTML denominata "all_parks"
